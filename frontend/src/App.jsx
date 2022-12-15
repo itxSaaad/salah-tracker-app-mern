@@ -1,12 +1,26 @@
 import React from "react";
+import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
+
 import "./App.css";
+
+import Header from "./components/Header";
+import Footer from "./components/Footer";
+
+import HomeScreen from "./screens/HomeScreen";
 
 function App() {
   return (
-    <div className="App">
-      <h1>Salah Tracker App</h1>
-      <p>Best App to Track your Salah!</p>
-    </div>
+    <Router>
+      <Header />
+      <main>
+        <div>
+          <Routes>
+            <Route path="/" element={<HomeScreen />} exact />
+          </Routes>
+        </div>
+      </main>
+      <Footer />
+    </Router>
   );
 }
 
