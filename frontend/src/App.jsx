@@ -10,17 +10,19 @@ import HomeScreen from "./screens/HomeScreen";
 
 function App() {
   return (
-    <Router>
-      <Header />
-      <main>
-        <div>
-          <Routes>
-            <Route path="/" element={<HomeScreen />} exact />
-          </Routes>
-        </div>
-      </main>
-      <Footer />
-    </Router>
+    <div className="backdrop-blur-sm">
+      <Router>
+        <Header />
+        <main>
+          <div className="container">
+            <Routes>
+              <Route path="/" element={<HomeScreen />} exact />
+            </Routes>
+          </div>
+        </main>
+        <Footer />
+      </Router>
+    </div>
   );
 }
 
