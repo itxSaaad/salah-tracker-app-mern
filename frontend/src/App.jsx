@@ -7,18 +7,18 @@ import Header from "./components/Header";
 import Footer from "./components/Footer";
 
 import HomeScreen from "./screens/HomeScreen";
+import ProgressScreen from "./screens/ProgressScreen";
 
 function App() {
   return (
     <div className="backdrop-blur-sm">
       <Router>
         <Header />
-        <main>
-          <div className="container">
-            <Routes>
-              <Route path="/" element={<HomeScreen />} exact />
-            </Routes>
-          </div>
+        <main className="container">
+          <Routes>
+            <Route path="/progress" element={<ProgressScreen />} />
+            <Route path="/" element={<HomeScreen />} exact />
+          </Routes>
         </main>
         <Footer />
       </Router>

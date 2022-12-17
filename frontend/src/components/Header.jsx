@@ -2,21 +2,33 @@ import React from "react";
 
 const Header = () => {
   return (
-    <header class="text-white body-font">
-      <div class="container mx-auto flex flex-wrap p-5 flex-col md:flex-row items-center">
-        <a class="flex title-font font-medium items-center mb-4 md:mb-0">
-          <span class="ml-3 text-3xl">Salah Tracker App</span>
+    <header className="text-white body-font">
+      <nav className="container mx-auto flex items-center justify-between flex-wrap p-5 flex-col md:flex-row items-center">
+        <a
+          href="/"
+          className="flex title-font font-medium items-center mb-4 md:mb-0"
+        >
+          <span className="ml-3 text-3xl">Salah Tracker App</span>
         </a>
-        <nav class="md:ml-auto flex flex-wrap items-center text-base justify-center">
-          <a class="mr-5 hover:font-bold hover:text-gray">Edit Profile</a>
-        </nav>
-        <button class="inline-flex items-center  border-gray-300 border py-1 px-3 focus:outline-none hover:bg-white hover:text-gray-600 rounded text-base mt-4 md:mt-0">
-          Login
-        </button>{" "}
-        <button class="inline-flex items-center border-gray-300 border py-1 px-3 focus:outline-none hover:bg-white hover:text-gray-600 rounded text-base mt-4 md:mt-0">
-          SignUp
-        </button>
-      </div>
+        <div>
+          <a href="/login" className="inline-block">
+            <button
+              type="button"
+              className="text-white border mt-2 border-gray-300 focus:outline-none hover:bg-gray-100 hover:text-gray-600 focus:ring-4 focus:ring-gray-200 font-medium rounded text-sm px-5 py-2.5 mr-2 mb-2 dark:bg-gray-800 dark:text-white dark:border-gray-600 dark:hover:bg-gray-700 dark:hover:border-gray-600 dark:focus:ring-gray-700"
+            >
+              Login <i className="fa fa-arrow-right-to-bracket"></i>
+            </button>
+          </a>
+          <a href="/register" className="inline-block">
+            <button
+              type="button"
+              className="text-white border mt-2 border-gray-300 focus:outline-none hover:bg-gray-100 hover:text-gray-600 focus:ring-4 focus:ring-gray-200 font-medium rounded text-sm px-5 py-2.5 mr-2 mb-2 dark:bg-gray-800 dark:text-white dark:border-gray-600 dark:hover:bg-gray-700 dark:hover:border-gray-600 dark:focus:ring-gray-700"
+            >
+              SignUp <i className="fa fa-user-plus"></i>
+            </button>
+          </a>
+        </div>
+      </nav>
     </header>
   );
 };
