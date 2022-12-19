@@ -12,11 +12,11 @@ import ProgressScreen from "./screens/ProgressScreen";
 function App() {
   return (
     <div className="backdrop-blur-sm">
-      <Router>
+      <Router basename="/">
         <Header />
         <main className="container">
           <Routes>
-            <Route path="/progress" element={<ProgressScreen />} />
+            <Route path="/progress" element={<ProgressScreen />} exact />
             <Route path="/" element={<HomeScreen />} exact />
           </Routes>
         </main>

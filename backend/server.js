@@ -1,14 +1,21 @@
-import express, { json } from "express";
-import { config } from "dotenv";
+import express from "express";
+import dotenv from "dotenv";
 import cors from "cors";
 import colors from "colors";
+import morgan from "morgan";
 import path from "path";
 
+import connectDB from "./db.js";
+
+dotenv.config();
+connectDB();
 const app = express();
 
-config();
+if (process.env.NODE_ENV === "development") {
+  app.use(morgan("dev"));
+}
 
-app.use(json());
+app.use(express.json());
 app.use(cors());
 
 const __dirname = path.resolve();
@@ -32,3 +39,4 @@ app.listen(
     `Server running in ${process.env.NODE_ENV} mode on port ${PORT}`.yellow.bold
   )
 );
+export default app;
